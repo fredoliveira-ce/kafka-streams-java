@@ -1,9 +1,15 @@
 # kafka-streams-java
-```kafka-topics --bootstrap-server localhost:9092 --create --topic word-count-input --partitions 2 --replication-factor 1```
-```kafka-topics --bootstrap-server localhost:9092 --create --topic word-count-output --partitions 2 --replication-factor 1```
+```
+kafka-topics --bootstrap-server localhost:9092 --create --topic word-count-input --partitions 2 --replication-factor 1
+```
+```
+kafka-topics --bootstrap-server localhost:9092 --create --topic word-count-output --partitions 2 --replication-factor 1
+```
 
 Check it out
-```kafka-topics --bootstrap-server localhost:9092 --list```
+```
+kafka-topics --bootstrap-server localhost:9092 --list
+```
 
 Kafka consumer
 ```
