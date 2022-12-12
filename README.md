@@ -1,4 +1,6 @@
 # kafka-streams-java
+
+## Word Count
 ```
 kafka-topics --bootstrap-server localhost:9092 --create --topic word-count-input --partitions 2 --replication-factor 1
 ```
@@ -27,4 +29,24 @@ kafka-console-consumer --bootstrap-server localhost:9092 \
 Kafka producer
 ```
 kafka-console-producer --bootstrap-server localhost:9092 --topic word-count-input
+```
+
+## Bank Balance
+```
+kafka-topics --bootstrap-server localhost:9092 --create --topic bank-transactions --partitions 2 --replication-factor 1
+```
+```
+kafka-topics --bootstrap-server localhost:9092 --create --topic bank-balance-aggregated --partitions 2 --replication-factor 1
+```
+
+```
+kafka-console-consumer --bootstrap-server localhost:9092 \
+        --topic bank-balance-aggregated \
+        --formatter kafka.tools.DefaultMessageFormatter \
+        --property print.timestamp=true \
+        --property print.key=true \
+        --property print.value=true \
+        --property key.deserializer=org.apache.kafka.common.serialization.StringDeserializer \
+        --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer \
+        --from-beginning
 ```
