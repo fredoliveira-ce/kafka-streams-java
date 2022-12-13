@@ -54,8 +54,8 @@ kafka-console-consumer --bootstrap-server localhost:9092 \
         --from-beginning
 ```
 
-## Bank Balance
-User Enricher
+## User Enricher
+Create topics
 ```
 kafka-topics --bootstrap-server localhost:9092 --create --topic user-table --partitions 2 --replication-factor 1
 ```
